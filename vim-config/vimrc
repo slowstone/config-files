@@ -65,6 +65,19 @@ if v:progname =~? "evim"
   finish
 endif
 
+" 自动补全插件的配置
+" let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
+
+" 默认开启NERDTree
+autocmd vimenter * NERDTree
+wincmd w
+autocmd VimEnter * wincmd w
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
+map <F10> <ESC>:NERDTreeToggle<CR>
+
+" 未安装vundle时，从此行开始复制
+
 set ignorecase
 set paste
 
@@ -73,18 +86,7 @@ map <s-s> <ESC>:w<CR>
 map <s-w> <ESC>:q<CR>
 map <c-n> <ESC>:cp<CR>
 map <c-m> <ESC>:cn<CR>
-" 默认开启NERDTree
-autocmd vimenter * NERDTree
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-map <F10> <ESC>:NERDTreeToggle<CR>
 nmap <s-Tab> gt
-nmap <c-x> <c-w>
-nmap <c-xx> <c-wa>
-
-autocmd VimEnter * NERDTree
-wincmd w
-autocmd VimEnter * wincmd w
 
 ""彩虹括号
 let g:rainbow_active = 1
@@ -143,7 +145,7 @@ set smartindent
 set shiftwidth=4
 
 " 超过100列提示
-let &colorcolumn=join(range(101,999),",")
+" let &colorcolumn=join(range(101,999),",")
 
 " 允许在有未保存的修改时切换缓冲区
 "set hidden
@@ -357,4 +359,3 @@ let Tlist_Auto_Open = 1
 "     endif
 "     autocmd BufNewFile * normal G
 " endfunc
-let g:pydiction_location = '~/.vim/tools/pydiction/complete-dict'
